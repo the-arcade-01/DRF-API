@@ -1,47 +1,17 @@
 from django.shortcuts import render
-from .models import Country
-from .serializers import CountrySerializer
+from .models import Country,State
+from .serializers import CountrySerializer, StateSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
+from rest_framework import viewsets
 
-class CountryAPIView(APIView):
-    
-    def get(self,request):
-        country = Country.objects.all()
-        serializer = CountrySerializer(country,many=True)
-        return Response(serializer.data)
+class CountryViewSet(viewsets.ModelViewSet):
+    serializer_class = CountrySerializer
+    queryset = Country.objects.all()
 
-    def post(self,request):
-        serializer = CountrySerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data,status=status.HTTP_201_CREATED)
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-        
-class CountryAPIDetails(APIView):
+class StateViewSet(viewsets.ModelViewSet):
+    serializer_class = StateSerializer
+    queryset = State.objects.all()
 
-    def get_object(self,id):
-        try:
-            return Country.objects.get(id = id)
-        except Country.DoesNotExist:
-            return Response(status=status.HTTP_204_NO_CONTENT)
-    
-    def get(self,request,id):
-        country = self.get_object(id)
-        serializer = CountrySerializer(country)
-        return Response(serializer.data)
-
-    def put(self,request,id):
-        country = self.get_object(id)
-        serializer = CountrySerializer(country,data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self,request,id):
-        country = self.get_object(id)
-        country.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
