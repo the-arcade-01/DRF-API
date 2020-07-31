@@ -28,8 +28,9 @@ class TownViewSet(viewsets.ModelViewSet):
 
 class PersonViewSet(viewsets.ModelViewSet):
     serializer_class = PersonSerializer
-    queryset = Person.objects.all()
+    queryset = Person.objects.select_related('country','state','city','town')
     pagination_class = PageNumberPagination
     filter_backends = (SearchFilter,OrderingFilter)
     search_fields = ('country__name','state__name','city__name','town__name','name')
-    
+
+
