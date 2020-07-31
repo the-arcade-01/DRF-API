@@ -6,6 +6,9 @@ from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.generics import ListAPIView
+from rest_framework.filters import SearchFilter, OrderingFilter
 
 class CountryViewSet(viewsets.ModelViewSet):
     serializer_class = CountrySerializer
@@ -26,3 +29,7 @@ class TownViewSet(viewsets.ModelViewSet):
 class PersonViewSet(viewsets.ModelViewSet):
     serializer_class = PersonSerializer
     queryset = Person.objects.all()
+    pagination_class = PageNumberPagination
+    filter_backends = (SearchFilter,OrderingFilter)
+    search_fields = ('country__name','state__name','city__name','town__name','name')
+    
