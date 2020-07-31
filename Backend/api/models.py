@@ -61,4 +61,12 @@ class Town(models.Model):
     def __str__(self):
         return "Town: "+self.name
 
- 
+class Person(models.Model):
+    name = models.CharField(max_length=100)
+    city = models.ForeignKey(City,on_delete=models.SET_NULL,related_name='person_city',null=True)
+    town = models.ForeignKey(Town,on_delete=models.SET_NULL,related_name='person_town',null=True)
+    state = models.ForeignKey(State,on_delete=models.SET_NULL,related_name='person_state',null=True)
+    country = models.ForeignKey(Country,on_delete=models.SET_NULL,related_name='person_country',null=True)
+
+    def __str__(self):
+        return f"Name {self.name}, Country {self.country}, City {self.city}, Town {self.town}, State {self.state}" 

@@ -14,6 +14,9 @@ city_router.register('api',views.CityViewSet, basename='CityAPI')
 town_router = DefaultRouter()
 town_router.register('api',views.TownViewSet, basename='TownAPI')
 
+person_router = DefaultRouter()
+person_router.register('api',views.PersonViewSet, basename='PersonAPI')
+
 urlpatterns = [
     path('country-viewset/',include(country_router.urls)),
     path('country-viewset/<int:id>/',include(country_router.urls)),
@@ -22,7 +25,10 @@ urlpatterns = [
     path('city-viewset/',include(city_router.urls)),
     path('city-viewset/<int:id>/',include(city_router.urls)),
     path('town-viewset/',include(town_router.urls)),
-    path('town-viewset/<int:int>/',include(town_router.urls)),
+    path('town-viewset/<int:id>/',include(town_router.urls)),
+    path('person-viewset/',include(person_router.urls)),
+    path('person-viewset/<int:id>/',include(person_router.urls)),
+
     # path('api/country',views.CountryAPIView.as_view()),
     # path('detail/country/<int:id>',views.CountryAPIDetails.as_view()),
 ]

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Country,State,City,Town
-from .serializers import CountrySerializer, StateSerializer, CitySerializer, TownSerializer
+from .models import Country,State,City,Town,Person
+from .serializers import CountrySerializer, StateSerializer, CitySerializer, TownSerializer, PersonSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
@@ -22,3 +22,7 @@ class CityViewSet(viewsets.ModelViewSet):
 class TownViewSet(viewsets.ModelViewSet):
     serializer_class = TownSerializer
     queryset = Town.objects.all()
+
+class PersonViewSet(viewsets.ModelViewSet):
+    serializer_class = PersonSerializer
+    queryset = Person.objects.all()

@@ -1,15 +1,22 @@
 from rest_framework import serializers
-from .models import Country, State, City, Town
+from .models import Country, State, City, Town, Person
+
+class PersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+        fields = ['id','name','country','state','city','town']
 
 class CitySerializer(serializers.ModelSerializer):
+    person_city = PersonSerializer(many=True,read_only=True)
     class Meta:
         model = City
-        fields = ['id','country','state','name','description','population','gdp']
+        fields = ['id','country','state','name','description','population','gdp','pin_code','person_city']
 
 class TownSerializer(serializers.ModelSerializer):
+    person_town = PersonSerializer(many=True,read_only=True)
     class Meta:
         model = Town
-        fields = ['id','country','state','name','description','population','gdp']
+        fields = ['id','country','state','name','description','population','gdp','pin_code','person_town']
 
 class StateSerializer(serializers.ModelSerializer):
     city_state = CitySerializer(many=True,read_only=True)
