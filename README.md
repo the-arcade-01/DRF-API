@@ -238,3 +238,5 @@ Postman Collections can be found [Here](https://github.com/the-arcade-01/DRF-API
 - [X] Postman Collections for all API
 - [X] Implemented views using ModelViewSet
 - [X] Comments and modular code
+
+### Created By [AASHISH RAMESH KOSHTI](https://github.com/the-arcade-01)
