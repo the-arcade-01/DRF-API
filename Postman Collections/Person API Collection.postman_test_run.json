@@ -1,7 +1,7 @@
 {
-	"id": "5aecbae4-837a-4399-ae13-05a16965b7cf",
+	"id": "09301382-1a7f-408b-9bd5-415314f69ae2",
 	"name": "Person API Collection",
-	"timestamp": "2020-08-01T12:12:12.159Z",
+	"timestamp": "2020-08-01T12:34:43.857Z",
 	"collection_id": "9162f140-e1ae-402d-9547-41928a4ab764",
 	"folder_id": 0,
 	"environment_id": "0",
@@ -12,7 +12,7 @@
 			"id": "665bc7ef-fa20-4fec-8b0b-590e1b500981",
 			"name": "http://127.0.0.1:8000/person-viewset/api",
 			"url": "http://127.0.0.1:8000/person-viewset/api",
-			"time": 213,
+			"time": 266,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -20,7 +20,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				213
+				266
 			],
 			"allTests": [
 				{}
@@ -30,7 +30,7 @@
 			"id": "740981bf-1052-4eba-b789-10175291cc15",
 			"name": "http://127.0.0.1:8000/person-viewset/api/?page=2",
 			"url": "http://127.0.0.1:8000/person-viewset/api/?page=2",
-			"time": 217,
+			"time": 218,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -38,7 +38,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				217
+				218
 			],
 			"allTests": [
 				{}
@@ -48,7 +48,7 @@
 			"id": "6131292b-b1be-45ec-8978-7c99087b54cc",
 			"name": "http://127.0.0.1:8000/person-viewset/api/?page=3",
 			"url": "http://127.0.0.1:8000/person-viewset/api/?page=3",
-			"time": 206,
+			"time": 231,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -56,7 +56,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				206
+				231
 			],
 			"allTests": [
 				{}
@@ -66,7 +66,7 @@
 			"id": "7ac2f43a-3edf-4815-a3c7-81a9dde82115",
 			"name": "http://127.0.0.1:8000/person-viewset/api/?page=4",
 			"url": "http://127.0.0.1:8000/person-viewset/api/?page=4",
-			"time": 201,
+			"time": 230,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -74,7 +74,25 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				201
+				230
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f11ff8db-eda6-4e73-8116-e04e4eb30ce3",
+			"name": "http://127.0.0.1:8000/person-viewset/api/?ordering=name&search=India",
+			"url": "http://127.0.0.1:8000/person-viewset/api/?ordering=name&search=India",
+			"time": 207,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				207
 			],
 			"allTests": [
 				{}
@@ -82,7 +100,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 837,
+	"totalTime": 1152,
 	"collection": {
 		"requests": [
 			{
@@ -99,6 +117,10 @@
 			},
 			{
 				"id": "7ac2f43a-3edf-4815-a3c7-81a9dde82115",
+				"method": "GET"
+			},
+			{
+				"id": "f11ff8db-eda6-4e73-8116-e04e4eb30ce3",
 				"method": "GET"
 			}
 		]
