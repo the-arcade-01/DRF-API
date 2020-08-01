@@ -5,43 +5,40 @@ from .models import Country,State,City,Town,Person
 from .serializers import CountrySerializer, StateSerializer, CitySerializer, TownSerializer, PersonSerializer
 
 # rest_framework imports for view, Pagination , Filtering and Ordering
-from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
-# Country API viewset
-class CountryViewSet(viewsets.ModelViewSet):
-    serializer_class = CountrySerializer
-    queryset = Country.objects.all()
+# Create your views here.
 
-# State API viewset
-class StateViewSet(viewsets.ModelViewSet):
-    serializer_class = StateSerializer
-    queryset = State.objects.all()
+class CountryAPIView(APIView):
 
-# City API viewset
-class CityViewSet(viewsets.ModelViewSet):
-    serializer_class = CitySerializer
-    queryset = City.objects.all()
+    def get(self, request, format=None):
+        country = Country.objects.all()
+        serializer = CountrySerializer(country, many=True)
+        return Response(serializer.data)
 
-# Town API viewset
-class TownViewSet(viewsets.ModelViewSet):
-    serializer_class = TownSerializer
-    queryset = Town.objects.all()
-
-# Person API viewset
-class PersonViewSet(viewsets.ModelViewSet):
-    serializer_class = PersonSerializer
-
-    # select_related for speeding up queries
-    queryset = Person.objects.select_related('country','state','city','town')
-    
-    # pagination API created here
-    pagination_class = PageNumberPagination
-
-    # filtering based on Search and Ordering filter provided with below attributes
-    filter_backends = (SearchFilter,OrderingFilter)
-    search_fields = ('country__name','state__name','city__name','town__name','name')
+    def post(self, request, format=None):
+        serializer = CountrySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
 
+class StateAPIView(APIView):
+
+    def get(self, request, format=None):
+        state = State.objects.all()
+        serializer = StateSerializer(state, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = StateSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
