@@ -1,6 +1,10 @@
 from django.db import models
 
-# Create your models here.
+"""
+    Country Model
+    Attributes : name, description, population, gdp
+    Ordering : gdp (ascending)
+"""
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
@@ -15,6 +19,13 @@ class Country(models.Model):
     def __str__(self):
         return "Country: "+self.name
 
+"""
+    State Model
+    Attributes : country(Foreign Key to Country Model), name
+                description, population, gdp
+    Ordering : gdp (ascending)
+"""
+
 class State(models.Model):
     country = models.ForeignKey(Country,on_delete=models.CASCADE,related_name='state_country')
     name = models.CharField(max_length=100)
@@ -28,6 +39,14 @@ class State(models.Model):
 
     def __str__(self):
         return "State: "+self.name
+
+"""
+    City Model
+    Attributes : country(Foreign Key to Country Model), 
+                state(Foreign Key to State Model),
+                name, description, population, gdp, pin_code
+    Ordering : gdp (ascending)
+"""
 
 class City(models.Model):
     country = models.ForeignKey(Country,on_delete=models.CASCADE,related_name='city_country')
@@ -45,6 +64,14 @@ class City(models.Model):
     def __str__(self):
         return "City: "+self.name
 
+"""
+    Town Model
+    Attributes : country(Foreign Key to Country Model), 
+                state(Foreign Key to State Model),
+                name, description, population, gdp, pin_code
+    Ordering : gdp (ascending)
+"""
+
 class Town(models.Model):
     country = models.ForeignKey(Country,on_delete=models.CASCADE,related_name="town_country")
     state = models.ForeignKey(State,on_delete=models.CASCADE,related_name='town_state')
@@ -60,6 +87,16 @@ class Town(models.Model):
 
     def __str__(self):
         return "Town: "+self.name
+
+"""
+    Person Model
+    Attributes : country(Foreign Key to Country Model), 
+                state(Foreign Key to State Model),
+                city(Foreign Key to City Model),
+                town(Foreign Key to Town Model),
+                name
+    Ordering : gdp (ascending)
+"""
 
 class Person(models.Model):
     name = models.CharField(max_length=100)
