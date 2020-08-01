@@ -1,0 +1,62 @@
+{
+	"id": "cb4a06e0-0c00-40d0-b686-7eacad29ad4c",
+	"name": "City API Collection",
+	"timestamp": "2020-08-01T12:11:02.815Z",
+	"collection_id": "80c758bc-eb57-4ca2-9124-c328761d2810",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "9374cad4-f00a-46a6-b704-f05839c6357e",
+			"name": "http://127.0.0.1:8000/city-viewset/api",
+			"url": "http://127.0.0.1:8000/city-viewset/api",
+			"time": 207,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				207
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4af64e67-a1b2-45ac-a08b-1b74683b9ff9",
+			"name": "http://127.0.0.1:8000/city-viewset/api/?page=2",
+			"url": "http://127.0.0.1:8000/city-viewset/api/?page=2",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				205
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 412,
+	"collection": {
+		"requests": [
+			{
+				"id": "9374cad4-f00a-46a6-b704-f05839c6357e",
+				"method": "GET"
+			},
+			{
+				"id": "4af64e67-a1b2-45ac-a08b-1b74683b9ff9",
+				"method": "GET"
+			}
+		]
+	}
+}

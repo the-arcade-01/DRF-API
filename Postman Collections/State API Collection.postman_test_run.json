@@ -1,0 +1,84 @@
+{
+	"id": "1b8d23bb-1af7-4774-9735-93c72d261660",
+	"name": "State API Collection",
+	"timestamp": "2020-08-01T12:12:24.474Z",
+	"collection_id": "16ea68fb-ff9f-4fee-9e75-ef661b039719",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "f96697c6-bf72-4505-925d-9e74e6902b74",
+			"name": "http://127.0.0.1:8000/state-viewset/api",
+			"url": "http://127.0.0.1:8000/state-viewset/api",
+			"time": 212,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				212
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d9049f56-1937-421e-b169-ef2db30739fa",
+			"name": "http://127.0.0.1:8000/state-viewset/api/?page=2",
+			"url": "http://127.0.0.1:8000/state-viewset/api/?page=2",
+			"time": 199,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				199
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f3a95b79-da38-4a1d-9bca-20c898927b9a",
+			"name": "http://127.0.0.1:8000/state-viewset/api/?page=3",
+			"url": "http://127.0.0.1:8000/state-viewset/api/?page=3",
+			"time": 209,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				209
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 620,
+	"collection": {
+		"requests": [
+			{
+				"id": "f96697c6-bf72-4505-925d-9e74e6902b74",
+				"method": "GET"
+			},
+			{
+				"id": "d9049f56-1937-421e-b169-ef2db30739fa",
+				"method": "GET"
+			},
+			{
+				"id": "f3a95b79-da38-4a1d-9bca-20c898927b9a",
+				"method": "GET"
+			}
+		]
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"id": "3f820410-a312-41b9-acfa-48e0fa7a6b0a",
+	"name": "Town API Collection",
+	"timestamp": "2020-08-01T12:12:36.341Z",
+	"collection_id": "3d81383c-89ca-4f86-8488-b71876340cc9",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "3c6b3050-8666-4b93-9fc2-fd3e41cd01ad",
+			"name": "http://127.0.0.1:8000/town-viewset/api",
+			"url": "http://127.0.0.1:8000/town-viewset/api",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				205
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 205,
+	"collection": {
+		"requests": [
+			{
+				"id": "3c6b3050-8666-4b93-9fc2-fd3e41cd01ad",
+				"method": "GET"
+			}
+		]
+	}
+}

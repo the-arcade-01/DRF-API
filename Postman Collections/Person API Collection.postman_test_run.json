@@ -1,0 +1,106 @@
+{
+	"id": "5aecbae4-837a-4399-ae13-05a16965b7cf",
+	"name": "Person API Collection",
+	"timestamp": "2020-08-01T12:12:12.159Z",
+	"collection_id": "9162f140-e1ae-402d-9547-41928a4ab764",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "665bc7ef-fa20-4fec-8b0b-590e1b500981",
+			"name": "http://127.0.0.1:8000/person-viewset/api",
+			"url": "http://127.0.0.1:8000/person-viewset/api",
+			"time": 213,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				213
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "740981bf-1052-4eba-b789-10175291cc15",
+			"name": "http://127.0.0.1:8000/person-viewset/api/?page=2",
+			"url": "http://127.0.0.1:8000/person-viewset/api/?page=2",
+			"time": 217,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				217
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6131292b-b1be-45ec-8978-7c99087b54cc",
+			"name": "http://127.0.0.1:8000/person-viewset/api/?page=3",
+			"url": "http://127.0.0.1:8000/person-viewset/api/?page=3",
+			"time": 206,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				206
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7ac2f43a-3edf-4815-a3c7-81a9dde82115",
+			"name": "http://127.0.0.1:8000/person-viewset/api/?page=4",
+			"url": "http://127.0.0.1:8000/person-viewset/api/?page=4",
+			"time": 201,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				201
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 837,
+	"collection": {
+		"requests": [
+			{
+				"id": "665bc7ef-fa20-4fec-8b0b-590e1b500981",
+				"method": "GET"
+			},
+			{
+				"id": "740981bf-1052-4eba-b789-10175291cc15",
+				"method": "GET"
+			},
+			{
+				"id": "6131292b-b1be-45ec-8978-7c99087b54cc",
+				"method": "GET"
+			},
+			{
+				"id": "7ac2f43a-3edf-4815-a3c7-81a9dde82115",
+				"method": "GET"
+			}
+		]
+	}
+}
